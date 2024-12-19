@@ -1,0 +1,119 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+}
+
+.gradient-container {
+  background-image: url(images/bg-main-desktop.png);
+  width: 30%;
+  position: relative;
+}
+
+.card {
+  position: absolute; /* Allows positioning outside the parent container */
+  text-align: center; /* Centers the text inside the card */
+  width: 300px; /* Adjust width as needed */
+}
+
+#cardFront {
+  top: 20%; /* Adjust this value to move it outside the container */
+  left: 50px; /* Adjust to position horizontally */
+  margin-left: 120px;
+}
+
+#cardBack {
+  top: 50%; /* Adjust this value to move it outside the container */
+  left: 50px; /* Adjust to position horizontally */
+  margin-left: 200px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-text {
+  position: absolute;
+  top: 50%; /* Centers text vertically */
+  left: 50%; /* Centers text horizontally */
+  transform: translate(-50%, -50%); /* Ensures perfect centering */
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 30px;
+}
+
+#input-container {
+  width: 70%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+img {
+  width: 300px;
+}
+
+#thirdInput {
+  display: flex;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  width: 50%;
+}
+
+#cardName,
+#cardNumber {
+  padding: 10px;
+  width: 90%;
+  outline: none;
+}
+
+#cardExp_mm,
+#cardExpYy {
+  padding: 10px;
+  outline: none;
+  width: 30%;
+}
+
+#cvc {
+  padding: 10px;
+  outline: none;
+  width: 70%;
+}
+
+#thirdHold2 {
+  margin-left: -40px;
+}
+
+#confirmBtn {
+  width: 94%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin: 20px;
+  margin-left: 0px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-text{
+    font-size: 10px;
+    color: red;
+}

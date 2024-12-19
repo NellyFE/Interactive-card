@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Interactive Card</title>
+  </head>
+  <body>
+    <main>
+      <div class="gradient-container">
+        <div id="cardFront" class="card">
+          <img src="images/bg-card-front.png" alt="card front" />
+          <div class="card-text">
+            <h4 id="numbers" style="width: 100%">0000 0000 0000 0000</h4>
+            <div
+              id="textflex"
+              style="
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+              "
+            >
+              <p id="holderName">Jane Appleseed</p>
+              <p id="holderExp">
+                <span id="theMM">00</span>/ <span id="theYY">00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="cardBack" class="card">
+          <img src="images/bg-card-back.png" alt="card back" />
+          <div class="card-text" style="margin-top: 0px">
+            <p id="cvcCard" style="margin-left: 100px">000</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="input-container">
+        <div class="input-box">
+          <div id="firstInput">
+            <h4>CARDHOLDER NAME</h4>
+            <input
+              type="number"
+              placeholder="e.g Jane Appleseeds"
+              id="cardName"
+            />
+          </div>
+
+          <div id="secondInput">
+            <h4>CARD NUMBER</h4>
+            <input
+              type="number"
+              placeholder="e.g 1234 5678 9123 0000"
+              id="cardNumber"
+            />
+            <span id="number-error" class="error-text" style="display: none"
+              >Wrong format, numbers only</span
+            >
+          </div>
+
+          <div id="thirdInput">
+            <div id="thirdHold1">
+              <h4>EXP.DATE (MM/YY)</h4>
+              <input
+                min="1"
+                max="12"
+                type="number"
+                placeholder="MM"
+                id="cardExp_mm"
+              />
+              <span id="month-error" class="error-text" style="display: none"
+                >Wrong format, numbers only</span
+              >
+
+              <input type="number" placeholder="YY" id="cardExpYy" />
+              <span id="year-error" class="error-text" style="display: none"
+                >Wrong format, numbers only</span
+              >
+            </div>
+
+            <div id="thirdHold2">
+              <h4>CVC</h4>
+              <input type="text" placeholder="e.g 123" id="cvc" />
+            </div>
+          </div>
+
+          <div id="button">
+            <button id="confirmBtn">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
