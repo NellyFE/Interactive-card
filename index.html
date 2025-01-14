@@ -42,7 +42,7 @@
           <div id="firstInput">
             <h4>CARDHOLDER NAME</h4>
             <input
-              type="number"
+              type="text"
               placeholder="e.g Jane Appleseeds"
               id="cardName"
             />
@@ -64,11 +64,11 @@
             <div id="thirdHold1">
               <h4>EXP.DATE (MM/YY)</h4>
               <input
-                min="1"
-                max="12"
-                type="number"
-                placeholder="MM"
+                type="text"
                 id="cardExp_mm"
+                placeholder="MM"
+                maxlength="2"
+                
               />
               <span id="month-error" class="error-text" style="display: none"
                 >Wrong format, numbers only</span

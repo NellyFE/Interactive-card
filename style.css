@@ -67,6 +67,7 @@ img {
 
 #thirdInput {
   display: flex;
+   padding-bottom: 25px;
 }
 
 .input-box {
@@ -98,6 +99,11 @@ img {
 
 #thirdHold2 {
   margin-left: -40px;
+}
+
+#thirdHold1{
+  padding-bottom: 25px;
+    border: 1px solid red;
 }
 
 #confirmBtn {

@@ -9,8 +9,7 @@ function validation() {
   const numberValue = cardNumberValue.value;
   const monthValue = parseInt(monthExpValue.value);
   const yearValue = parseInt(yearExpValue.value);
-  const cvcValue = parseInt(cvcCardValue.value);
-
+  const cvcValue = parseInt(cvcCardValue.value);         
 
   let isValid = true;
 
@@ -20,13 +19,14 @@ function validation() {
   const yearError = document.getElementById("year-error");
 
   const errorMessage = (text) => {
+    cardNumberValue.style.borderColor = "red";
     numberError.style.display = "block";
     numberError.innerText = text;
     isValid = false;
   };
 
   const monthErrorMessage = (texts) => {
-    monthError.style.display = "block";
+    monthError.style.display = "flex";
     monthError.innerText = texts;
     monthExpValue.style.borderColor = "red";
     isValid = false;
@@ -34,7 +34,6 @@ function validation() {
 
   //number validation
   if (isNaN(numberValue) || numberValue.length !== 16) {
-    cardNumberValue.style.borderColor = "red";
     errorMessage("Wrong format, number must be 16 ");
   } else {
     cardNumberValue.style.borderColor = "grey";
@@ -42,10 +41,10 @@ function validation() {
   }
 
   //month exp validation
-  if (monthValue === "") {
-    monthErrorMessage("can't be blank");
-  } else if (monthValue.length > 2) {
-    monthErrorMessage("Wrong format,number must be 2");
+  if (monthExpValue.value.trim() === "") {
+    monthErrorMessage("Can't be blank");
+  } else if (monthValue < 1 || monthValue > 12 || isNaN(monthValue)) {
+    monthErrorMessage("Invalid month");
   } else {
     monthExpValue.style.borderColor = "grey";
     monthError.style.display = "none";
