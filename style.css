@@ -88,7 +88,13 @@ img {
 #cardExpYy {
   padding: 10px;
   outline: none;
-  width: 30%;
+  width: 50%;
+
+}
+
+#cardExpYy , #year-error{
+  margin-left: -50px;
+  width: 70%;
 }
 
 #cvc {
@@ -103,7 +109,12 @@ img {
 
 #thirdHold1{
   padding-bottom: 25px;
-    border: 1px solid red;
+      display: flex;
+       flex-direction: column;
+}
+
+.inputflex{
+  display: flex;
 }
 
 #confirmBtn {

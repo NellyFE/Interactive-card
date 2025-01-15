@@ -51,7 +51,7 @@
           <div id="secondInput">
             <h4>CARD NUMBER</h4>
             <input
-              type="number"
+              type="text"
               placeholder="e.g 1234 5678 9123 0000"
               id="cardNumber"
             />
@@ -63,26 +63,43 @@
           <div id="thirdInput">
             <div id="thirdHold1">
               <h4>EXP.DATE (MM/YY)</h4>
-              <input
-                type="text"
-                id="cardExp_mm"
-                placeholder="MM"
-                maxlength="2"
-                
-              />
-              <span id="month-error" class="error-text" style="display: none"
-                >Wrong format, numbers only</span
-              >
 
-              <input type="number" placeholder="YY" id="cardExpYy" />
-              <span id="year-error" class="error-text" style="display: none"
-                >Wrong format, numbers only</span
-              >
+              <div class="inputflex">
+                <div class="spanflex">
+                  <input
+                    type="text"
+                    id="cardExp_mm"
+                    placeholder="MM"
+                    maxlength="2"
+                  />
+                  <span
+                    id="month-error"
+                    class="error-text"
+                    style="display: none"
+                    >Wrong format, numbers only</span
+                  >
+                </div>
+
+                <div class="spanflex">
+                  <input
+                    type="text"
+                    placeholder="YY"
+                    id="cardExpYy"
+                    maxlength="2"
+                  />
+                  <span id="year-error" class="error-text" style="display: none"
+                    >Wrong format, numbers only</span
+                  >
+                </div>
+              </div>
             </div>
 
             <div id="thirdHold2">
               <h4>CVC</h4>
-              <input type="text" placeholder="e.g 123" id="cvc" />
+              <input type="text" placeholder="e.g 123" id="cvc" maxlength="3" />
+              <span id="cvc-error" class="error-text" style="display: none"
+                >Wrong format, numbers only</span
+              >
             </div>
           </div>
 

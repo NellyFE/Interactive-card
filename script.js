@@ -9,7 +9,7 @@ function validation() {
   const numberValue = cardNumberValue.value;
   const monthValue = parseInt(monthExpValue.value);
   const yearValue = parseInt(yearExpValue.value);
-  const cvcValue = parseInt(cvcCardValue.value);         
+  const cvcValue = parseInt(cvcCardValue.value);
 
   let isValid = true;
 
@@ -17,6 +17,7 @@ function validation() {
   const numberError = document.getElementById("number-error");
   const monthError = document.getElementById("month-error");
   const yearError = document.getElementById("year-error");
+  const cvcError = document.getElementById("cvc-error");
 
   const errorMessage = (text) => {
     cardNumberValue.style.borderColor = "red";
@@ -29,6 +30,20 @@ function validation() {
     monthError.style.display = "flex";
     monthError.innerText = texts;
     monthExpValue.style.borderColor = "red";
+    isValid = false;
+  };
+
+  const yearErrorMessage = (texts) => {
+    yearError.style.display = "flex";
+    yearError.innerText = texts;
+    yearExpValue.style.borderColor = "red";
+    isValid = false;
+  };
+
+  const cvcErrorMessage = (texts) => {
+    cvcError.style.display = "flex";
+    cvcError.innerText = texts;
+    cvcCardValue.style.borderColor = "red";
     isValid = false;
   };
 
@@ -49,6 +64,27 @@ function validation() {
     monthExpValue.style.borderColor = "grey";
     monthError.style.display = "none";
   }
+
+  //Year validation
+  if (yearExpValue.value.trim() === "") {
+    yearErrorMessage("Can't be blank");
+  } else if (yearValue < 1 || isNaN(yearValue)) {
+    yearErrorMessage("Invalid month");
+  } else {
+    yearExpValue.style.borderColor = "grey";
+    yearError.style.display = "none";
+  }
+
+  //cvc validation
+  if (cvcCardValue.value.trim() === "") {
+    cvcErrorMessage("Can't be blank");
+  } else if (isNaN(cvcValue)|| cvcValue.length !== 3) {
+    cvcErrorMessage("Invalid number");
+  } else {
+    cvcCardValue.style.borderColor = "grey";
+    cvcError.style.display = "none";
+  }
+  return isValid;
 }
 
 function cardDetails() {
@@ -61,8 +97,7 @@ function cardDetails() {
   const names = document.getElementById("holderName");
   names.innerText = nameValue;
 
-  console.log(cardNumberValue);
-  console.log("clicked");
+  console.log({ cardNumberValue, nameValue, nameInputValue, names });
 
   //getting card nameto show
   const numberValue = cardNumberValue.value;
