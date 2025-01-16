@@ -23,7 +23,7 @@
             >
               <p id="holderName">Jane Appleseed</p>
               <p id="holderExp">
-                <span id="theMM">00</span>/ <span id="theYY">00</span>
+                <span id="theMM">00</span>/<span id="theYY">00</span>
               </p>
             </div>
           </div>
@@ -38,7 +38,7 @@
       </div>
 
       <div id="input-container">
-        <div class="input-box">
+        <div class="input-box" id="input-box">
           <div id="firstInput">
             <h4>CARDHOLDER NAME</h4>
             <input
@@ -106,6 +106,13 @@
           <div id="button">
             <button id="confirmBtn">Confirm</button>
           </div>
+        </div>
+
+        <div id="thank-you-section" style="display: none; text-align: center">
+          <i class="fa-solid fa-circle-check" id="thankYouIcon"></i>
+          <h2>Thank You!</h2>
+          <p>We've added your card details.</p>
+          <button id="continueBtn" >Continue</button>
         </div>
       </div>
     </main>

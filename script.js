@@ -4,6 +4,11 @@ const monthExpValue = document.getElementById("cardExp_mm");
 const yearExpValue = document.getElementById("cardExpYy");
 const cvcCardValue = document.getElementById("cvc");
 const confirmBtn = document.getElementById("confirmBtn");
+const inputBox = document.getElementById("input-box");
+const thankYou = document.getElementById("thank-you-section");
+const continueBtn = document.getElementById("continueBtn");
+const numbers = document.getElementById("numbers");
+
 
 function validation() {
   const numberValue = cardNumberValue.value;
@@ -78,7 +83,7 @@ function validation() {
   //cvc validation
   if (cvcCardValue.value.trim() === "") {
     cvcErrorMessage("Can't be blank");
-  } else if (isNaN(cvcValue)|| cvcValue.length !== 3) {
+  } else if (isNaN(cvcValue) || cvcValue.length < 3) {
     cvcErrorMessage("Invalid number");
   } else {
     cvcCardValue.style.borderColor = "grey";
@@ -87,37 +92,67 @@ function validation() {
   return isValid;
 }
 
+const hideElement = (type) => {
+  type === "form"
+    ? (inputBox.style.display = "none")
+    : (thankYou.style.display = "none");
+};
+
+const showElement = (type) => {
+  type === "form"
+    ? (inputBox.style.display = "block")
+    : (thankYou.style.display = "block");
+};
+
+
 function cardDetails() {
   if (!validation()) {
     return;
   }
 
-  //getting card number to show
+  // Getting cardholder name to show
   const nameValue = nameInputValue.value;
   const names = document.getElementById("holderName");
   names.innerText = nameValue;
 
-  console.log({ cardNumberValue, nameValue, nameInputValue, names });
+  // Getting card number to show
+  numbers.innerText = numberValue;
 
-  //getting card nameto show
-  const numberValue = cardNumberValue.value;
-  const numbers = document.getElementById("numbers");
-  numbers.innerHTML = numberValue;
-
-  //getting MM to show
+  // Getting MM to show
   const monthValue = monthExpValue.value;
   const month = document.getElementById("theMM");
   month.innerText = monthValue;
 
-  //getting the YY to show
+  // Getting YY to show
   const yearValue = yearExpValue.value;
   const year = document.getElementById("theYY");
   year.innerText = yearValue;
 
-  //getting cvc to show
+  // Getting CVC to show
   const cvcValue = cvcCardValue.value;
   const cvc = document.getElementById("cvcCard");
   cvc.innerText = cvcValue;
+
+    // // show success message
+  hideElement("form");
+  showElement("thanks");
+
+
+  // inputContainer.innerHTML =
+  // "<div id='thank-you-section'  text-align: center;'><i class='fa-solid fa-circle-check' id='thankYouIcon'></i>  <h2>Thank You!</h2><p>We've added your card details.</p><button iconst '>Continue</button></div>";
 }
 
+
+// Adding the event listener for the Confirm button
 confirmBtn.addEventListener("click", cardDetails);
+continueBtn.addEventListener("click", () => {
+  hideElement("thankyou");
+  showElement("form");
+  resetinput = () => {
+    numberValue = "";
+    numbers.innerText = numbers;
+  
+  
+   
+  }
+});
