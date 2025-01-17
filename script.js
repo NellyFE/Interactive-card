@@ -7,9 +7,13 @@ const confirmBtn = document.getElementById("confirmBtn");
 const inputBox = document.getElementById("input-box");
 const thankYou = document.getElementById("thank-you-section");
 const continueBtn = document.getElementById("continueBtn");
+const cvc = document.getElementById("cvcCard");
+const names = document.getElementById("holderName");
 const numbers = document.getElementById("numbers");
+const month = document.getElementById("theMM");
+const year = document.getElementById("theYY");
 
-
+//Validations
 function validation() {
   const numberValue = cardNumberValue.value;
   const monthValue = parseInt(monthExpValue.value);
@@ -104,7 +108,6 @@ const showElement = (type) => {
     : (thankYou.style.display = "block");
 };
 
-
 function cardDetails() {
   if (!validation()) {
     return;
@@ -112,47 +115,51 @@ function cardDetails() {
 
   // Getting cardholder name to show
   const nameValue = nameInputValue.value;
-  const names = document.getElementById("holderName");
   names.innerText = nameValue;
 
   // Getting card number to show
+  const numberValue = cardNumberValue.value;
   numbers.innerText = numberValue;
 
   // Getting MM to show
   const monthValue = monthExpValue.value;
-  const month = document.getElementById("theMM");
   month.innerText = monthValue;
 
   // Getting YY to show
   const yearValue = yearExpValue.value;
-  const year = document.getElementById("theYY");
   year.innerText = yearValue;
 
   // Getting CVC to show
   const cvcValue = cvcCardValue.value;
-  const cvc = document.getElementById("cvcCard");
   cvc.innerText = cvcValue;
 
-    // // show success message
+  // // show success message
   hideElement("form");
   showElement("thanks");
-
 
   // inputContainer.innerHTML =
   // "<div id='thank-you-section'  text-align: center;'><i class='fa-solid fa-circle-check' id='thankYouIcon'></i>  <h2>Thank You!</h2><p>We've added your card details.</p><button iconst '>Continue</button></div>";
 }
 
+resetInputs = () => {
+  nameInputValue.value = "";
+  cardNumberValue.value = "";
+  monthExpValue.value = "";
+  yearExpValue.value = "";
+  cvcCardValue.value = "";
+
+  // Reset the displayed card values to their initial state
+  names.innerText = "Jane Appleseed";
+  numbers.innerText = "0000 0000 0000 0000";
+  month.innerText = "00";
+  year.innerText = "00";
+  cvc.innerText = "000";
+};
 
 // Adding the event listener for the Confirm button
 confirmBtn.addEventListener("click", cardDetails);
 continueBtn.addEventListener("click", () => {
   hideElement("thankyou");
   showElement("form");
-  resetinput = () => {
-    numberValue = "";
-    numbers.innerText = numbers;
-  
-  
-   
-  }
+  resetInputs();
 });
