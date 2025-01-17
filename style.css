@@ -67,7 +67,7 @@ img {
 
 #thirdInput {
   display: flex;
-   padding-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 .input-box {
@@ -89,10 +89,10 @@ img {
   padding: 10px;
   outline: none;
   width: 50%;
-
 }
 
-#cardExpYy , #year-error{
+#cardExpYy,
+#year-error {
   margin-left: -50px;
   width: 70%;
 }
@@ -107,17 +107,18 @@ img {
   margin-left: -40px;
 }
 
-#thirdHold1{
+#thirdHold1 {
   padding-bottom: 25px;
-      display: flex;
-       flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.inputflex{
+.inputflex {
   display: flex;
 }
 
-#confirmBtn , #continueBtn {
+#confirmBtn,
+#continueBtn {
   width: 94%;
   padding: 10px;
   border: none;
@@ -130,66 +131,57 @@ img {
   cursor: pointer;
 }
 
-.error-text{
-    font-size: 10px;
-    color: red;
+.error-text {
+  font-size: 10px;
+  color: red;
 }
 
-.fa-circle-check{
+.fa-circle-check {
   color: purple;
   padding: 20px;
-font-size: 50px;
-
-
+  font-size: 50px;
 }
-
 
 @media (max-width: 950px) {
+  main {
+    flex-direction: column;
+  }
 
-main{
-  flex-direction: column;
-}
+  .gradient-container {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+  }
 
-.gradient-container {
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height:250px;
+  .card {
+    position: relative; /* Allows positioning outside the parent container */
+  }
 
-}
+  #cardFront {
+    top: 60%; /* Adjust this value to move it outside the container */
 
-.card {
-  position: relative; /* Allows positioning outside the parent container */
- 
-}
+    z-index: 99;
+  }
 
-#cardFront {
-  top: 60%; /* Adjust this value to move it outside the container */
- 
-  z-index: 99;
-}
+  #cardBack {
+    top: -50%; /* Adjust this value to move it outside the container */
+  }
 
-#cardBack {
-  top: -50%; /* Adjust this value to move it outside the container */
+  #input-container {
+    width: 100%;
+  }
 
-}
-
-#input-container {
-  width: 100%;
-}
-
-.input-box {
-  padding-top: 90px;
-  padding-left: 0px;
-  width: 70%;
-}
-
+  .input-box , #thank-you-section {
+    padding-top: 90px;
+    padding-left: 0px;
+    width: 70%;
+  }
 }
 
 @media (max-width: 699px) {
-  #cardFront{
+  #cardFront {
     left: -80px;
-
   }
 
   #cardBack {
@@ -198,25 +190,24 @@ main{
 }
 
 @media (max-width: 1029px) {
-#cardFront{
-margin-left: 100px;
-}
+  #cardFront {
+    margin-left: 100px;
+  }
 
-#cardBack{
-margin-left: 150px;
-}
+  #cardBack {
+    margin-left: 150px;
+  }
 
-#cardExp_mm,
-#cardExpYy {
-  padding: 10px;
-  outline: none;
-  width: 40%;
+  #cardExp_mm,
+  #cardExpYy {
+    padding: 10px;
+    outline: none;
+    width: 40%;
+  }
 
-}
-
-#cardExpYy , #year-error{
-  margin-left: -20px;
-  width: 40%;
-}
-
+  #cardExpYy,
+  #year-error {
+    margin-left: -20px;
+    width: 40%;
+  }
 }
