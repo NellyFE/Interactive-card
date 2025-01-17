@@ -87,12 +87,13 @@ function validation() {
   //cvc validation
   if (cvcCardValue.value.trim() === "") {
     cvcErrorMessage("Can't be blank");
-  } else if (isNaN(cvcValue) || cvcValue.length < 3) {
+  } else if (isNaN(cvcValue) || cvcCardValue.value.length < 3) {
     cvcErrorMessage("Invalid number");
   } else {
     cvcCardValue.style.borderColor = "grey";
     cvcError.style.display = "none";
   }
+  console.log(cvcCardValue.value);
   return isValid;
 }
 
